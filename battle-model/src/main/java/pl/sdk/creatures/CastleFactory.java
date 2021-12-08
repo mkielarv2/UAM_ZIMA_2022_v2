@@ -1,5 +1,7 @@
 package pl.sdk.creatures;
 
+import org.checkerframework.checker.units.qual.C;
+
 public class CastleFactory {
     private static final String EXCEPTION_MESSAGE = "We support tiers from 1 to 7";
 
@@ -18,10 +20,11 @@ public class CastleFactory {
                             .amount(aAmount)
                             .build();
                 case 2:
-                    return new Creature.Builder()
+                    Creature archer = new Creature.Builder()
                             .statistic(CreatureStatistic.ARCHER)
                             .amount(aAmount)
                             .build();
+                    return new ShootingCreatureDecorator(archer);
                 case 3:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.GRIFFIN)
@@ -33,10 +36,11 @@ public class CastleFactory {
                             .amount(aAmount)
                             .build();
                 case 5:
-                    return new Creature.Builder()
+                    Creature monk = new Creature.Builder()
                             .statistic(CreatureStatistic.MONK)
                             .amount(aAmount)
                             .build();
+                    return new ShootingCreatureDecorator(monk);
                 case 6:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.CAVALIER)
@@ -58,10 +62,11 @@ public class CastleFactory {
                             .amount(aAmount)
                             .build();
                 case 2:
-                    return new Creature.Builder()
+                    Creature marksman = new Creature.Builder()
                             .statistic(CreatureStatistic.MARKSMAN)
                             .amount(aAmount)
                             .build();
+                    return new ShootingCreatureDecorator(marksman);
                 case 3:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.ROYAL_GRIFFIN)
@@ -73,10 +78,11 @@ public class CastleFactory {
                             .amount(aAmount)
                             .build();
                 case 5:
-                    return new Creature.Builder()
+                    Creature zealot = new Creature.Builder()
                             .statistic(CreatureStatistic.ZEALOT)
                             .amount(aAmount)
                             .build();
+                    return new ShootingCreatureDecorator(zealot);
                 case 6:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.CHAMPION)
