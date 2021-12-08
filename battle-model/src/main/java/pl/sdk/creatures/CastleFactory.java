@@ -24,7 +24,7 @@ public class CastleFactory {
                             .statistic(CreatureStatistic.ARCHER)
                             .amount(aAmount)
                             .build();
-                    return new ShootingCreatureDecorator(archer);
+                    return new BlockCounterAttackCreatureDecorator(new ShootingCreatureDecorator(archer));
                 case 3:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.GRIFFIN)
@@ -40,7 +40,7 @@ public class CastleFactory {
                             .statistic(CreatureStatistic.MONK)
                             .amount(aAmount)
                             .build();
-                    return new ShootingCreatureDecorator(monk);
+                    return new BlockCounterAttackCreatureDecorator(new ShootingCreatureDecorator(monk));
                 case 6:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.CAVALIER)
@@ -66,7 +66,7 @@ public class CastleFactory {
                             .statistic(CreatureStatistic.MARKSMAN)
                             .amount(aAmount)
                             .build();
-                    return new ShootingCreatureDecorator(marksman);
+                    return new BlockCounterAttackCreatureDecorator(new ShootingCreatureDecorator(marksman));
                 case 3:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.ROYAL_GRIFFIN)
@@ -82,7 +82,7 @@ public class CastleFactory {
                             .statistic(CreatureStatistic.ZEALOT)
                             .amount(aAmount)
                             .build();
-                    return new ShootingCreatureDecorator(zealot);
+                    return new BlockCounterAttackCreatureDecorator(new ShootingCreatureDecorator(zealot));
                 case 6:
                     return new Creature.Builder()
                             .statistic(CreatureStatistic.CHAMPION)
