@@ -21,7 +21,23 @@ enum CreatureStatistic implements CreatureStatisticIf{
     VAMPIRE_LORD("Vampire Lord",10,10,40,9,Range.closed(5,8),4,"My favorite necropolis unit. Use them as main striking unit and you might end up with no losses!\nSpecial: no enemy retaliation ; resurrects members of their own stack by restoring health equal to the amount of damage they do to living enemies.\n",true),
     POWER_LICH("Power Lich",13,10,40,7,Range.closed(11,15),5,"Now they last longer and are able to do more damage! A must for good necropolis army.\nSpecial: death cloud range attack - damages living creatures on adjacent hexes to target.\n",true),
     DREAD_KNIGHT("Dread Knight",18,18,120,9,Range.closed(15,30),6,"I think it's the best lvl6 unit in the game! Double damage ability puts Dread Knights above Naga Queens.\nSpecial: 20% chance to curse enemy ; 20% chance to do double damage.\n",true),
-    GHOST_DRAGON("Ghost Dragon",19,17,200,14,Range.closed(25,50),7,"When situation seems hopeless, take a chance on the best enemy stack! If you'll get lucky, half their hit points will be gone instantly!! Ageing ability makes ghost dragons as dangerous as other lvl7 creatures.\nSpecial: -1 to enemy morale ; 20% chance to age enemy (halve hit points of all stack members).\n",true);
+    GHOST_DRAGON("Ghost Dragon",19,17,200,14,Range.closed(25,50),7,"When situation seems hopeless, take a chance on the best enemy stack! If you'll get lucky, half their hit points will be gone instantly!! Ageing ability makes ghost dragons as dangerous as other lvl7 creatures.\nSpecial: -1 to enemy morale ; 20% chance to age enemy (halve hit points of all stack members).\n",true),
+
+    // CASTLE FRACTION
+    PIKEMAN("Pikeman", 4, 5, 10, 4, Range.closed(1, 3), 1, "Toughest lvl1 unit, but a bit slow.", false),
+    ARCHER("Archer", 6, 3, 10, 4, Range.closed(2, 3), 2, "Archer's upgrade is literally 2 times better. Upgrade them quickly.", false),
+    GRIFFIN("Griffin", 8, 8, 25, 6, Range.closed(3, 6), 3, "High in population, griffins become castle's main unit for the midgame.\nSpecial: can retaliate against 2 attacks per turn.", false),
+    SWORDSMAN("Swordsman", 10, 12, 35, 5, Range.closed(6, 9), 4, "Not too good unit the upgrade and also too slow.", false),
+    MONK("Monk", 12, 7, 30, 5, Range.closed(10, 12), 5, "Good shooter, nice damage.", false),
+    CAVALIER("Cavalier", 15, 15, 100, 7, Range.closed(15, 25), 6, "Make sure that the path is as long as possible - they need some speed!\nSpecial: +5% damage for each hex traveled to creature attacked.", false),
+    ANGEL("Angel", 20, 20, 200, 9, Range.closed(50, 50), 7, "Nice combat ratings and great constant damage - no need to bless them. Note that before the update patches Angels and Archangels didn't cost any gems, just gold. This has been added to try to balance the castle a little. I think it's still too powerful.\nSpecial: 150% damage to devils", false),
+    HALBERDIER("Halberdier", 6, 5, 10, 5, Range.closed(2, 3), 1, "Now they are faster and do more damage. Will make a good defence for shooters.", true),
+    MARKSMAN("Marksman", 6, 3, 10, 6, Range.closed(2, 3), 2, "Awesome upgrade, but they still lack defence...\nSpecial: Fires 2 shots per ranged attack.", true),
+    ROYAL_GRIFFIN("Royal Griffin", 9, 9, 25, 9, Range.closed(3, 6), 3, "Send them right in the middle of the battlefield. Everyone who comes will get some ;)\nSpecial: unlimited retaliations.", true),
+    CRUSADER("Crusader", 12, 12, 35, 6, Range.closed(7, 10), 4, "Good upgrade, but still lacks speed. Seem undefeatable in large numbers.\nSpecial: attacks twice.", true),
+    ZEALOT("Zealot", 12, 10, 30, 7, Range.closed(10, 12), 5, "Zealots are skilled enough to use the same magic powers at very close range. Better defence too.\nSpecial: no penalty for hand-to-hand attacks.", true),
+    CHAMPION("Champion", 16, 16, 100, 9, Range.closed(20, 25), 6, "That's up to 45% extra damage possible! Champions also have better aiming skills.\nSpecial: +5% damage for each hex traveled to creature attacked.", true),
+    ARCHANGEL("Archangel", 30, 30, 250, 18, Range.closed(50, 50), 7, "Best attack, defence and speed in a whole game! Resurrection is a very convenient abbility. Those fast wings take up a whole extra hex! :] Possibly the best creature in the game.\nSpecial: 150% damage to devils ; Resurrect dead allied troops once per combat.", true);
 
     private final String name;
     private final int attack;
