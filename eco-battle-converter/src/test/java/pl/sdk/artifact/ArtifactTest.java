@@ -47,15 +47,4 @@ public class ArtifactTest {
         // Can't adjust current hp for Creature instance
         assertEquals(15, creature.getCurrentHp());
     }
-
-    // different approach of doing this
-    @Test
-    void shouldHave2MoreMaxAndCurrentHpAlternativeApproach(){
-        EconomyArtifact artifact = economyArtifactFactory.create(("Vial of Liveblood"));
-        creature = new Creature().Builder()
-                .statistic(artifactFactory.create(creature.stats, artifact.getName()))
-                .build();
-        assertEquals(12, creature.getCurrentHp());
-        assertEquals(12, creature.getMaxHp());
-    }
 }

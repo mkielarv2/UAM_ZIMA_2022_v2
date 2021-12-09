@@ -4,8 +4,6 @@ public class EconomyArtifact {
     private final ArtifactInfo info;
     private final int goldCost;
 
-
-
     EconomyArtifact(ArtifactInfo aInfo, int aGoldCost) {
         info = aInfo;
         goldCost = aGoldCost;
