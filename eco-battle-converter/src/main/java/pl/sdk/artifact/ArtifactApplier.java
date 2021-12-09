@@ -16,17 +16,18 @@ public class ArtifactApplier {
         artifactFactory = new ArtifactFactory();
     }
 
-    public List<Creature> applyArtifacts(List<Creature> creatures, List<EconomyArtifact> artifacts) {
+    public List<Creature> applyArtifacts(List<Creature> aCreatures, List<EconomyArtifact> aArtifacts) {
         List<Creature> modifiedCreatures = new ArrayList<>();
 
-        for(Creature creature : creatures){
-            for(EconomyArtifact artifact: artifacts) {
-                // need a way to copy a creature and set its stats
-                // Creature modifiedCreature = creature.copy()
+        for(Creature creature : aCreatures){
+            // need a way to copy a creature and set its stats
+            // Creature modifiedCreature = creature.copy()
 
+            for(EconomyArtifact artifact: aArtifacts) {
                 modifiedCreature.stats = artifactFactory.create(modifiedCreatures.stats, artifact.getName());
-                modifiedCreatures.add(modifiedCreature);
             }
+
+            modifiedCreatures.add(modifiedCreature);
         }
 
         return modifiedCreatures;

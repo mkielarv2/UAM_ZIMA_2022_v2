@@ -22,23 +22,40 @@ public class ArtifactTest {
     }
 
     @Test
-    void shouldHave5MoreMaxHp(){
+    void shouldHave5MoreMaxAndCurrentHp(){
         creature.stats = new CreatureStatisticHpDecorator(creature.stats, 5);
         // cant get maxHp for Creature instance
+        assertEquals(15, creature.getMaxHp());
+        // Can't adjust current hp for Creature instance
         assertEquals(15, creature.getCurrentHp());
     }
 
     @Test
-    void shouldHave1MoreMaxHp(){
+    void shouldHave1MoreMaxAndCurrentHp(){
         EconomyArtifact artifact = economyArtifactFactory.create("Ring of Vitality");
-        creature.stats = artifactFactory.create(creature.stats, artifact);
-        assertEquals(11, creature.getCurrentHp());
+        creature.stats = artifactFactory.create(creature.stats, artifact.getName());
+        assertEquals(11, creature.getMaxHp());
+        // Can't adjust current hp for Creature instance
+        assertEquals(15, creature.getCurrentHp());
     }
 
     @Test
-    void shouldHave2MoreMaxHp(){
+    void shouldHave2MoreMaxAndCurrentHp(){
         EconomyArtifact artifact = economyArtifactFactory.create("Vial of Lifeblood");
-        creature.stats = artifactFactory.create(creature.stats, artifact);
+        creature.stats = artifactFactory.create(creature.stats, artifact.getName());
+        assertEquals(12, creature.getMaxHp());
+        // Can't adjust current hp for Creature instance
+        assertEquals(15, creature.getCurrentHp());
+    }
+
+    // different approach of doing this
+    @Test
+    void shouldHave2MoreMaxAndCurrentHpAlternativeApproach(){
+        EconomyArtifact artifact = economyArtifactFactory.create(("Vial of Liveblood"));
+        creature = new Creature().Builder()
+                .statistic(artifactFactory.create(creature.stats, artifact.getName()))
+                .build();
         assertEquals(12, creature.getCurrentHp());
+        assertEquals(12, creature.getMaxHp());
     }
 }
