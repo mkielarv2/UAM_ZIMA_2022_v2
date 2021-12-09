@@ -18,7 +18,7 @@ class BuffDebuffSpellsTest {
 
     @Test
     void creatureShouldHave7MoveRange() {
-        Spell haste = SpellFabric.getSpell(Spells.HASTE);
+        Spell haste = SpellFactory.getSpell(Spells.HASTE);
 
         hero.cast(haste).onCreature(targetedCreature);
 
@@ -27,7 +27,7 @@ class BuffDebuffSpellsTest {
 
     @Test
     void creatureShouldHave3MoveRange() {
-        Spell slow = SpellFabric.getSpell(Spells.SLOW);
+        Spell slow = SpellFactory.getSpell(Spells.SLOW);
 
         hero.cast(slow).onCreature(targetedCreature);
 
@@ -36,9 +36,9 @@ class BuffDebuffSpellsTest {
 
     @Test
     void creatureShouldHave8Attack() {
-        Spell bloodlust = SpellFabric.getSpell(Spells.BLOODLUST);
+        Spell bloodLust = SpellFactory.getSpell(Spells.BLOOD_LUST);
 
-        hero.cast(bloodlust).onCreature(targetedCreature);
+        hero.cast(bloodLust).onCreature(targetedCreature);
 
         assertEquals(8,targetedCreature.getAttack());
     }

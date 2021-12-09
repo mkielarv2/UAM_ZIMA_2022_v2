@@ -17,8 +17,8 @@ class DamageSpellsTest {
     }
 
     @Test
-    void creatureShouldTake30HpFromIceBoltIfHeroHas1Power() {
-        Spell iceBolt = SpellFabric.getSpell(Spells.ICE_BOLT);
+    void creatureShouldLost30HpFromIceBoltIfHeroHas1Power() {
+        Spell iceBolt = SpellFactory.getSpell(Spells.ICE_BOLT);
 
         hero.cast(iceBolt).onCreature(defender);
 
@@ -26,8 +26,8 @@ class DamageSpellsTest {
     }
 
     @Test
-    void creatureShouldTake20HpFromMagicArrowIfHeroHas1Power() {
-        Spell magicArrow = SpellFabric.getSpell(Spells.MAGIC_ARROW);
+    void creatureShouldLost20HpFromMagicArrowIfHeroHas1Power() {
+        Spell magicArrow = SpellFactory.getSpell(Spells.MAGIC_ARROW);
 
         hero.cast(magicArrow).onCreature(defender);
 
@@ -35,8 +35,8 @@ class DamageSpellsTest {
     }
 
     @Test
-    void creatureShouldTake35HpFroMightBoltIfHeroHas1Power(){
-        Spell iceBolt = SpellFabric.getSpell(Spells.ICE_BOLT);
+    void creatureShouldLost35HpFromLightBoltIfHeroHas1Power(){
+        Spell iceBolt = SpellFactory.getSpell(Spells.ICE_BOLT);
 
         hero.cast(iceBolt).onCreature(defender);
 

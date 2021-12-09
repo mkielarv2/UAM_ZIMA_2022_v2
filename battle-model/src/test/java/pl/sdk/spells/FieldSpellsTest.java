@@ -24,8 +24,8 @@ class FieldSpellsTest {
         SpecialField field = SpecialFieldFactory.createImpassableField();
         engine.createSpecialField(new Point(5,5), field);
 
-        Spell removeObstacles = SpellFabric.getSpell(Spells.REMOVE_OBSTACLES);
-        hero.cast(removeObstacles).onField(Point(5,5));
+        Spell removeObstacles = SpellFactory.getSpell(Spells.REMOVE_OBSTACLES);
+        hero.cast(removeObstacles).onField(engine.getField(new Point(5,5)));
 
         boolean canMove = engine.canMove(5, 5);
 
@@ -36,11 +36,11 @@ class FieldSpellsTest {
     @Test
     void shouldBeTrueIfForceFieldWorksCorrectly() {
         SpecialField expectedFieldType = SpecialFieldFactory.createImpassableField();
-        Point field = new Point(5,5);
-        Point field = new Point(5,6);
+        Point pointX5Y5 = new Point(5,5);
+        Point pointX5Y6 = new Point(5,6);
 
-        Spell forceField = SpellFabric.getSpell(Spells.FORCE_FIELD);
-        hero.cast(forceField).onField(Point(5,5));
+        Spell forceField = SpellFactory.getSpell(Spells.FORCE_FIELD);
+        hero.cast(forceField).onField(new Point(5,5));
 
         assertEquals(expectedFieldType, engine.getField(new Point(5,5)));
         assertEquals(expectedFieldType, engine.getField(new Point(5,6)));
@@ -50,8 +50,8 @@ class FieldSpellsTest {
     void shouldBeTrueIfFireWallWorksCorrectly() {
         SpecialField expectedFieldType = SpecialFieldFactory.createFireField();
 
-        Spell fireWall = SpellFabric.getSpell(Spells.FIRE_WALL);
-        hero.cast(fireWall).onField(Point(5,5));
+        Spell fireWall = SpellFactory.getSpell(Spells.FIRE_WALL);
+        hero.cast(fireWall).onField(new Point(5,5));
 
         assertEquals(expectedFieldType, engine.getField(new Point(5,5)));
         assertEquals(expectedFieldType, engine.getField(new Point(5,6)));
