@@ -93,7 +93,7 @@ class SpecialFieldTest {
 
         int afterHp = engine.getActiveCreature().getCurrentHp();
 
-        assertEquals(afterHp, prevHp - 5);
+        assertEquals(prevHp - 5, afterHp);
 
     }
     @Test
@@ -111,7 +111,7 @@ class SpecialFieldTest {
 
         int buffedRange = engine.getActiveCreature().getMoveRange();
 
-        assertEquals(buffedRange, range*2);
+        assertEquals(range*2, buffedRange);
 
     }
 
