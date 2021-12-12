@@ -3,14 +3,17 @@ package pl.sdk.creatures;
 public class FractionFactory {
     final static String EXCEPTION_MESSAGE = "Fraction doesn't exist!";
 
-    public AbstractCreatureFactory makeFraction(Fractions aFraction) {
-        if (aFraction.equals(Fractions.CASTLE)) {
-            return new CastleFactory();
-        } else if (aFraction.equals(Fractions.DUNGEON)) {
-            return new DungeonFactory();
-        } else if (aFraction.equals(Fractions.NECROPOLIS)) {
-            return new NecropolisFactory();
+    public AbstractCreatureFactory getInstance(Fractions aFraction) {
+
+        switch (aFraction) {
+            case CASTLE:
+                return new CastleFactory();
+            case NECROPOLIS:
+                return new NecropolisFactory();
+            case DUNGEON:
+                return new DungeonFactory();
+            default:
+                throw new IllegalArgumentException(EXCEPTION_MESSAGE);
         }
-        throw new IllegalArgumentException(EXCEPTION_MESSAGE);
     }
 }
