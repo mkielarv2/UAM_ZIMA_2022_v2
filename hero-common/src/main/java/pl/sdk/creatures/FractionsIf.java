@@ -1,2 +1,6 @@
-package pl.sdk.creatures;public interface FractionsIf {
+package pl.sdk.creatures;
+
+public interface FractionsIf {
+
+    String getFraction();
 }

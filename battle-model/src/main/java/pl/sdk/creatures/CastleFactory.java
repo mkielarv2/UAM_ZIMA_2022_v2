@@ -1,8 +1,8 @@
 package pl.sdk.creatures;
 
-import org.checkerframework.checker.units.qual.C;
 
-public class CastleFactory {
+public class CastleFactory implements AbstractCreatureFactory{
+
     private static final String EXCEPTION_MESSAGE = "We support tiers from 1 to 7";
 
     public static Creature createDefaultForTests() {
