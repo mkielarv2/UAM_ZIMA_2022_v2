@@ -1,0 +1,4 @@
+1. jak skonstruowac hierarchie klas
+2. obserwatory do znikania pol
+3. czy pola maja znikac po jakims czasie
+4. czy istnieja pola ktore zadaja obrazenia dla obu

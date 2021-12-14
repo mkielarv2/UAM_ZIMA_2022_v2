@@ -1,6 +1,7 @@
 package pl.sdk;
 
 import pl.sdk.creatures.Creature;
+import pl.sdk.fields.SpecialField;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -107,6 +108,10 @@ public class GameEngine {
         putCreaturesFromOneSideToBoard(aCreatures2, GameEngine.BOARD_WIDTH - 1);
     }
 
+    public void insertSpecialFieldToBoard(Point point, SpecialField specialField){
+        board.addField(point, specialField);
+    }
+
     private void putCreaturesFromOneSideToBoard(List<Creature> aCreatures, int aX) {
         for (int i = 0; i < aCreatures.size(); i++) {
             board.add(new Point(aX, i * 2 + 1), aCreatures.get(i));
@@ -115,6 +120,10 @@ public class GameEngine {
 
     public Creature get(int aX, int aY) {
         return board.get(aX, aY);
+    }
+
+    public SpecialField getField(int aX, int aY) {
+        return board.getField(aX, aY);
     }
 
     public Creature getActiveCreature() {
