@@ -11,17 +11,18 @@ import java.util.List;
 public class EconomyHero {
     public enum Fraction {
         NECROPOLIS;
+
     }
-
     private final Fraction fraction;
-    private HeroStats stats;
 
+    private HeroStats stats;
     private List<SecondarySkill> secondarySkillList;
+
     private List<Artefact> artefactList;
     private List<Spell> spellList;
     private final List<EconomyCreature> creatureList;
-
     private int gold;
+
     public EconomyHero(Fraction aFraction, HeroStats stats, int aGold, String aName) {
         fraction = aFraction;
         gold = aGold;
@@ -41,6 +42,10 @@ public class EconomyHero {
 
     public void addGold(int aAmount){
         gold += aAmount;
+    }
+
+    public HeroStats getStats() {
+        return stats;
     }
 
     public List<EconomyCreature> getCreatures() {
