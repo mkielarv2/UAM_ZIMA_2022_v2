@@ -2,6 +2,8 @@ package pl.sdk.hero;
 
 import pl.sdk.creatures.EconomyCreature;
 
+
+import javax.xml.namespace.QName;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,10 +14,15 @@ public class EconomyHero {
         NECROPOLIS;
     }
     private final Fraction fraction;
+    private HeroStats stats;
 
+    private List<SecondarySkill> secondarySkillList;
+    private List<Artefact> artefactList;
+    private List<Spell> spellList;
     private final List<EconomyCreature> creatureList;
+
     private int gold;
-    public EconomyHero(Fraction aFraction, int aGold) {
+    public EconomyHero(Fraction aFraction, int aGold, String aName) {
         fraction = aFraction;
         gold = aGold;
         creatureList = new ArrayList<>();
