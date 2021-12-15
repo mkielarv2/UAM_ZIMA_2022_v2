@@ -1,9 +1,17 @@
 package pl.sdk.creatures;
 
-
 public class NecropolisFactory {
 
     private static final String EXCEPTION_MESSAGE = "We support tiers from 1 to 7";
+    private CreatureStatisticModifier statisticModifier;
+
+    public NecropolisFactory() {
+        statisticModifier = new CreatureStatisticModifier.Builder().build();
+    }
+
+    public void addModifier(CreatureStatisticIf aModifier) {
+        statisticModifier = statisticModifier.addModifier(aModifier);
+    }
 
     public static Creature createDefaultForTests() {
         return new Creature.Builder()
@@ -16,17 +24,17 @@ public class NecropolisFactory {
             switch (aTier) {
                 case 1:
                     return new Creature.Builder()
-                            .statistic(CreatureStatistic.SKELETON)
+                            .statistic(statisticModifier.addModifier(CreatureStatistic.SKELETON))
                             .amount(aAmount)
                             .build();
                 case 2:
                     return new Creature.Builder()
-                            .statistic(CreatureStatistic.WALKING_DEAD)
+                            .statistic(statisticModifier.addModifier(CreatureStatistic.WALKING_DEAD))
                             .amount(aAmount)
                             .build();
                 case 3:
                     return new Creature.Builder()
-                            .statistic(CreatureStatistic.WIGHT)
+                            .statistic(statisticModifier.addModifier(CreatureStatistic.WIGHT))
                             .amount(aAmount)
                             .build();
                 case 4:
@@ -106,5 +114,10 @@ public class NecropolisFactory {
         splashDamageTable[1][2] = true;
         splashDamageTable[1][0] = true;
         return splashDamageTable;
+    }
+
+    private CreatureStatisticIf applyModifier (CreatureStatisticIf aStats, CreatureStatisticModifier aModifier) {
+       // : DDD
+        return null;
     }
 }

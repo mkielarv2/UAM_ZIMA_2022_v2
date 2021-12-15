@@ -1,9 +1,5 @@
-package pl.sdk.artifact;
+package pl.sdk.artifacts;
 
-import com.google.common.collect.Range;
-import org.checkerframework.checker.units.qual.A;
-import org.checkerframework.checker.units.qual.C;
-import pl.sdk.artifacts.EconomyArtifact;
 import pl.sdk.creatures.Creature;
 
 import java.util.ArrayList;
@@ -24,10 +20,10 @@ public class ArtifactApplier {
             // Creature modifiedCreature = creature.copy()
 
             for(EconomyArtifact artifact: aArtifacts) {
-                modifiedCreature.stats = artifactFactory.create(modifiedCreatures.stats, artifact.getName());
+                // modifiedCreature.stats = artifactFactory.create(modifiedCreatures.stats, artifact.getName());
             }
 
-            modifiedCreatures.add(modifiedCreature);
+           // modifiedCreatures.add(modifiedCreature);
         }
 
         return modifiedCreatures;
