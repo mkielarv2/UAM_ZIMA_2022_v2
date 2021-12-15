@@ -9,10 +9,10 @@ import java.util.Collection;
 import java.util.List;
 
 public class EconomyHero {
-
     public enum Fraction {
         NECROPOLIS;
     }
+
     private final Fraction fraction;
     private HeroStats stats;
 
@@ -22,7 +22,7 @@ public class EconomyHero {
     private final List<EconomyCreature> creatureList;
 
     private int gold;
-    public EconomyHero(Fraction aFraction, int aGold, String aName) {
+    public EconomyHero(Fraction aFraction, HeroStats stats, int aGold, String aName) {
         fraction = aFraction;
         gold = aGold;
         creatureList = new ArrayList<>();

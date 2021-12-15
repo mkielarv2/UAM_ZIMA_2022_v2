@@ -1,7 +1,6 @@
 package pl.sdk.hero;
 
 enum HeroStats implements HeroStatsIf{
-
     Edric("Edric", 2,2,1,1,0,0),
     Orrin("Orrin", 2,2,1,1,0,0),
     Adela("Adela",1,0,2,2,0,0),
@@ -32,6 +31,7 @@ enum HeroStats implements HeroStatsIf{
         this.morale = morale;
         this.luck = luck;
     }
+
     public String getName() {
         return name;
     }
@@ -59,5 +59,4 @@ enum HeroStats implements HeroStatsIf{
     public int getLuck() {
         return luck;
     }
-
 }
